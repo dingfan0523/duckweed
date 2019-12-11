@@ -15,6 +15,7 @@ import java.io.IOException;
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException{
+        System.out.println("||||||||||||授权失败|||||||||||");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         response.getWriter().println(BaseResult.failure(e.getMessage()));

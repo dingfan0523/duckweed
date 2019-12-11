@@ -44,5 +44,5 @@ public class OperationLog extends BaseEntity {
     private String type;
     @ApiModelProperty(value = "用户昵称")
     @Transient
-    private String nickName;
+    private String nickname;
 }

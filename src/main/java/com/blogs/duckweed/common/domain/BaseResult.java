@@ -1,6 +1,8 @@
 package com.blogs.duckweed.common.domain;
 
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
  *
  * @author William Guo
  */
+@ApiModel(description = "通用返回实体")
 public class BaseResult implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -31,8 +34,11 @@ public class BaseResult implements Serializable {
     // 身份校验失败
     public static final Integer ADDRESS_AUTH_FAILURE = 6;
 
+    @ApiModelProperty(value = "返回码")
     private Integer code;
+    @ApiModelProperty(value = "提示消息")
     private String msg;
+    @ApiModelProperty(value = "数据")
     private Object data;
 
     public BaseResult() {

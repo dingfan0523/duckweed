@@ -10,13 +10,22 @@ spring:
 jwt:
   tokenHeader: Authorization #存储token的请求头
   tokenHead: Bearer
+authorize:
+  ignored:
+    urls: #url白名单
+      - /swagger-resources/**
+      - /webjars/**
+      - /v2/**
+      - /swagger-ui.html/**
+      - /user/signIn
+      - /user/list
 ---
 #本地环境
 spring:
   profiles: local
   datasource:
     druid:
-      url: jdbc:mysql://127.0.0.1:3306/cplay?serverTimezone=GMT%2B8
+      url: jdbc:mysql://127.0.0.1:3306/duckweed?serverTimezone=GMT%2B8
       username: root
       password: 123456
       initial-size: 10

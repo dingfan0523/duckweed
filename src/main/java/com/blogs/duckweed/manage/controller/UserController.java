@@ -12,17 +12,16 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * @author dingfan
  */
-@Api(description = "登录注册控制器")
-@RestController("user")
+@Api(description = "用户控制器")
+@RestController
+@RequestMapping(value = "user")
 public class UserController {
     private final UserService userService;
     private final UserAuthService userAuthService;
@@ -39,6 +38,7 @@ public class UserController {
     @PostMapping(value = "signIn")
     public BaseResult signIn(@RequestParam("account") @ApiParam("账号") String account,
                              @RequestParam("password") @ApiParam("密码") String password) {
+        System.out.println("登录:" + account);
         List<String> codeList = authService.defaultCodeList();
         UserAuth userAuth = userAuthService.verityAccount(account, codeList);
         if (null == userAuth) {
@@ -58,5 +58,11 @@ public class UserController {
                                 @RequestParam("code") @ApiParam("验证码") String code) {
 
         return BaseResult.success();
+    }
+
+    @ApiOperation(value = "用户实体")
+    @GetMapping(value = "list")
+    public BaseResult list() {
+        return BaseResult.success(userService.findAll());
     }
 }
