@@ -18,6 +18,7 @@
         <java.version>1.8</java.version>
         <druid.version>1.1.10</druid.version>
         <jjwt.version>0.9.0</jjwt.version>
+        <aliyun-java-core.version>4.0.3</aliyun-java-core.version>
         <fastjson.version>1.2.47</fastjson.version>
         <swagger.version>2.8.0</swagger.version>
     </properties>
@@ -29,6 +30,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- END SpringBoot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!-- BEGIN JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,6 +66,13 @@
             <version>${jjwt.version}</version>
         </dependency>
         <!-- END JJWT -->
+        <!-- BEGIN AliyunSms -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>${aliyun-java-core.version}</version>
+        </dependency>
+        <!-- END AliyunSms -->
         <!-- BEGIN fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -68,6 +80,12 @@
             <version>${fastjson.version}</version>
         </dependency>
         <!-- END fastjson -->
+        <!-- BEGIN HttpClient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <!-- END HttpClient -->
         <!-- BEGIN lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

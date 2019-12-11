@@ -7,8 +7,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+jwt:
+  tokenHeader: Authorization #瀛樺偍token鐨勮姹傚ご
+  tokenHead: Bearer
 ---
-#本地运行环境
+#鏈湴鐜
 spring:
   profiles: local
   datasource:

@@ -15,25 +15,25 @@ public class BaseResult implements Serializable {
     private static final long serialVersionUID = 1L;
 
     // 未登录标识
-    public final static Integer NOLOGIN              = -1;
+    public final static Integer NOLOGIN = -1;
     // 成功标识
-    public final static Integer SUCCESS              = 0;
+    public final static Integer SUCCESS = 0;
     // 失败标识
-    public final static Integer FAILURE              = 1;
+    public final static Integer FAILURE = 1;
     // 参数异常
-    public final static Integer PARAMETER_ERROR      = 2;
+    public final static Integer PARAMETER_ERROR = 2;
     // 未绑定
-    public final static Integer USER_NO_BIND         = 3;
+    public final static Integer USER_NO_BIND = 3;
     // 重复绑定
-    public static final Integer USER_REPEAT_BIND     = 4;
+    public static final Integer USER_REPEAT_BIND = 4;
     // 店铺锁定
-    public static final Integer USER_STORE_LOCKED    = 5;
+    public static final Integer USER_STORE_LOCKED = 5;
     // 身份校验失败
     public static final Integer ADDRESS_AUTH_FAILURE = 6;
 
     private Integer code;
-    private String  msg;
-    private Object  data;
+    private String msg;
+    private Object data;
 
     public BaseResult() {
     }
